@@ -1,0 +1,43 @@
+<h2>Mis Jugadores</h2>
+
+<div>
+  <label>Id:
+    <input #futbolId />
+  </label>
+  <br>
+  <label>Nombre:
+    <input #futbolNombre />
+  </label>
+  <br>
+    <label>Salario:
+    <input #futbolSalario />
+  </label>
+  <br>
+    <label>Equipo:
+    <input #futbolEquipo />
+  </label>
+  <br> 
+  <button (click)="add(futbolId.value, futbolNombre.value, futbolSalario.value, futbolEquipo.value); futbolId.value=''; futbolNombre.value=''; futbolSalario.value=''; futbolEquipo.value=''">
+   Añadir
+  </button>
+</div>
+
+
+<br><br>
+<table class="futbols">
+	<tr>
+		<th>Id</th>
+		<th>Nombre</th>
+		<th>Salario</th>
+    <th>ID_Equipo</th>
+		
+	</tr>
+	<tr *ngFor="let futbol of futbols">
+		<th><a routerLink="/detalles/{{futbol.id}}"> {{futbol.id}} </a></th>
+		<th> {{futbol.nombre}} </th>
+		<th> {{futbol.salario}} </th>
+		<th> {{futbol.equipo}} </th>
+		<th> <button class="delete" title="delete futbol"
+      (click)="delete(futbol)">x</button> </th>
+	</tr>
+</table>

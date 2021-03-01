@@ -1,0 +1,19 @@
+<div *ngIf="futbol != undefined">
+  
+  <h2>Detalles del Jugador {{futbol.nombre}}</h2>
+  <div><span>id: </span>{{futbol.id}}</div>
+  <div><span>nombre: </span>{{futbol.nombre}}</div>
+  <div>
+    <label
+      >Salario:
+      <input #futbolSalario  [(ngModel)]="futbol.salario" placeholder="salario"/>
+    </label>
+     <br>
+    <label
+      >Equipo:
+      <input #futbolEquipo  [(ngModel)]="futbol.equipo" placeholder="equipo"/>
+    </label>
+  </div>
+  <button (click)="goBack()">volver</button>
+  <button (click)="save(futbolSalario.value, futbolEquipo.value)">guardar</button>
+</div>

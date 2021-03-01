@@ -1,0 +1,24 @@
+<div *ngIf="equipo != undefined">
+  
+  <h2>Detalles del Equipo {{equipo.nombre}}</h2>
+  <div><span>id: </span>{{equipo.id}}</div>
+  <div><span>nombre: </span>{{equipo.nombre}}</div>
+  <div>
+    <label
+      >Salario:
+      <input #equipoSalario  [(ngModel)]="equipo.salario" placeholder="salario"/>
+    </label>
+     <br>
+    <label
+      >Titulos:
+      <input #equipoTitulos  [(ngModel)]="equipo.titulos" placeholder="titulos"/>
+    </label>
+    <br>
+    <label
+      >F_club:
+      <input #equipoF_club  [(ngModel)]="equipo.f_club" placeholder="f_club"/>
+    </label>
+  </div>
+  <button (click)="goBack()">volver</button>
+  <button (click)="save(equipoSalario.value, equipoTitulos.value, equipoF_club.value)">guardar</button>
+</div>
